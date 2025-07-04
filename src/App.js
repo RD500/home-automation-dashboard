@@ -56,7 +56,7 @@ function App() {
   const manualStartListening = () => {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!SpeechRecognition) {
-      alert("❌ Your browser does not support Web Speech API.");
+      alert(" Your browser does not support Web Speech API.");
       return;
     }
 
@@ -98,7 +98,7 @@ function App() {
     const params = result?.parameters;
 
     if (!intent) {
-      alert("❌ No intent detected.");
+      alert(" No intent detected.");
       return;
     }
 
@@ -106,22 +106,22 @@ function App() {
       const val = params?.state;
       if (val) {
         set(ref(db, "alarm"), val);
-        alert("✅ Alarm updated via voice!");
+        alert("Alarm updated via voice!");
       }
     } else if (intent === "override_toggle") {
       const val = params?.state;
       if (val) {
         set(ref(db, "override"), val);
-        alert("✅ Override updated via voice!");
+        alert(" Override updated via voice!");
       }
     } else if (intent === "movie_night_toggle") {
       const val = params?.state;
       if (val) {
         set(ref(db, "movie_night"), val);
-        alert("🎬 Movie Night mode set via voice!");
+        alert(" Movie Night mode set via voice!");
       }
     } else {
-      alert(`⚠️ Unknown command: ${intent}`);
+      alert(` Unknown command: ${intent}`);
     }
 
     setManualTranscript("");
@@ -235,7 +235,7 @@ function App() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <DeviceCard
-            title="Security Alarm"
+            title="Alarm"
             status={alarm}
             onToggle={updateFirebase}
             field="alarm"
