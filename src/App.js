@@ -241,7 +241,7 @@ function App() {
             field="alarm"
             icon={Shield}
             accentColor="from-red-500 to-pink-600"
-            description="Enable or disable security system"
+            description="Enable or disable alarm"
           />
           <DeviceCard
             title="Override Mode"
@@ -250,7 +250,7 @@ function App() {
             field="override"
             icon={Settings}
             accentColor="from-orange-500 to-red-600"
-            description="Toggle emergency override"
+            description="Toggle override"
           />
           <DeviceCard
             title="Movie Night"
